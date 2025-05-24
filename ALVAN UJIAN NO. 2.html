@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog dengan Komentar Tersembunyi</title>
+    <style>
+        #komentarSection {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            display: none; 
+        }
+        
+        .komentar {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: white;
+            border-radius: 3px;
+        }
+        
+        #toggleKomentarBtn {
+            padding: 8px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        
+        #toggleKomentarBtn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <h1>Judul Artikel Lingkungan</h1
+        <p> Kerusuhan 1998 adalah peristiwa kekacauan besar yang terjadi pada Mei 1998 di Indonesia,
+dipicu oleh krisis ekonomi, ketidakpuasan terhadap pemerintahan Orde Baru, dan tuntutan reformasi. 
+Aksi demonstrasi berubah menjadi kerusuhan, penjarahan, dan kekerasan, terutama di Jakarta.
+Ratusan orang tewas, dan banyak warga Tionghoa menjadi korban. Peristiwa ini berujung pada mundurnya
+Presiden Soeharto pada 21 Mei 1998, mengakhiri 32 tahun kekuasaannya dan menandai awal era Reformasi.
+<h1>Ayo mulai sekarang!💚</h1></p>
+        
+        <button id="toggleKomentarBtn">Tampilkan Komentar</button>
+        
+        <section id="komentarSection">
+            <h3>Komentar</h3>
+            
+            <div class="komentar">
+                <strong>Deni</strong> - <em>15 Mei 2025</em>
+                <p>Artikel yang sangat bermanfaat, terima kasih!</p>
+            </div>
+            
+            <div class="komentar">
+                <strong>Alua</strong> - <em>14 Mei 2025</em>
+                <p>Peristiwa yang sangat bersejarah.</p>
+            </div>
+            
+            <div class="komentar">
+                <strong>Desi</strong> - <em>13 Mei 2025</em>
+                <p>Sangat mengerikan keadaan saat itu</p>
+            </div>
+        </section>
+    </article>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggleBtn = document.getElementById('toggleKomentarBtn');
+            const komentarSection = document.getElementById('komentarSection');
+            let komentarDitampilkan = false;
+            
+            toggleBtn.addEventListener('click', function() {
+                if (komentarDitampilkan) {
+                    komentarSection.style.display = 'none';
+                    toggleBtn.textContent = 'Tampilkan Komentar';
+                    komentarDitampilkan = false;
+                } else {
+                    komentarSection.style.display = 'block';
+                    toggleBtn.textContent = 'Sembunyikan Komentar';
+                    komentarDitampilkan = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
